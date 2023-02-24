@@ -3,22 +3,46 @@
 import inquirer from 'inquirer'
 import fs from 'fs'
 
+const mitLicence = '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)';
+const apacheLicence = '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)';
+const doWhatLicence = '[![License: WTFPL](https://img.shields.io/badge/License-WTFPL-brightgreen.svg)](http://www.wtfpl.net/about/)'
+
+const licenceBadge = function (response) {
+    if (response.licence === response.licence.choices[0]) {
+        return apacheLicence;
+    }
+else if (response.licence === response.licence.choices[1]) {
+    return mitLicence;
+}
+else if (response.licence === response.licence.choices[2]) {
+    return doWhatLicence;
+};
+};
+
+
 // this is the function of the file structure
 const generateReadme = (response) =>
-// gotta use the weird quotes
-// When a user enters the project title then it is displayed as the title of the README
-// When a user enters a description, installation instructions, usage information, contribution guidelines and test instructions then this information is added to the sections of the README entitled Description, Installation, Usage, Contributing, and Tests, 
+    // gotta use the weird quotes
+    // When a user enters the project title then it is displayed as the title of the README
+    // When a user enters a description, installation instructions, usage information, contribution guidelines and test instructions then this information is added to the sections of the README entitled Description, Installation, Usage, Contributing, and Tests, 
     `# Title
 ${response.title}
-
+` + 
+licenceBadge
++
+`
 ## Description
 ${response.description}
 
 ## Contents
 [- Installation](#installation)
+
 [- Usage](#usage)
+
 [- Licence](#licence)
+
 [- Contributions](#contributions)
+
 [- Tests](#tests)
 
 ## Installation
@@ -28,7 +52,7 @@ ${response.installation}
 ${response.usage}
 
 ## Licence
-${response.licence}
+This application is covered by the ${response.licence}.
 
 ## Contributions
 ${response.contributions}
@@ -76,7 +100,7 @@ inquirer
             type: 'list',
             message: 'Add your licence..',
             name: 'licence',
-            choices: ['Apache license 2.0', 'Artistic license 2.0', 'Do What The F*ck You Want To Public License']
+            choices: ['Apache license 2.0', 'MIT licence', 'Do What The F*ck You Want To Public License']
         },
         {
             // Contributing
@@ -118,24 +142,5 @@ inquirer
 
 
 // When a user chooses a license for their application from a list of options then a badge for that license is added 
-// near the top of the README and a notice is added to the section of the README entitled License that explains which 
-// license the application is covered under
+// near the top of the README 
 
-
-// When a user enters their GitHub username then this is added to the section of the README entitled Questions, 
-// with a link to their GitHub profile
-
-
-// When a user clicks on the links in the Table of Contents then they are taken to the corresponding section of the README
-
-
-
-// licences:
-
-// apache [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-
-// do what the [![License: WTFPL](https://img.shields.io/badge/License-WTFPL-brightgreen.svg)](http://www.wtfpl.net/about/)
-
-// artistic licence [![License: Artistic-2.0](https://img.shields.io/badge/License-Artistic_2.0-0298c3.svg)](https://opensource.org/licenses/Artistic-2.0)
-
-// MIT [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
