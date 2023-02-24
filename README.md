@@ -1,17 +1,8 @@
 # Title
-this
-function (response) {
-    if (response.licence === response.licence.choices[0]) {
-        return apacheLicence;
-    }
-else if (response.licence === response.licence.choices[1]) {
-    return mitLicence;
-}
-else if (response.licence === response.licence.choices[2]) {
-    return doWhatLicence;
-};
-}## Description
-hello
+d
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+## Description
+d
 
 ## Contents
 [- Installation](#installation)
@@ -25,22 +16,22 @@ hello
 [- Tests](#tests)
 
 ## Installation
-none
+d
 
 ## Usage
-none
+f
 
 ## Licence
 This application is covered by the MIT licence.
 
 ## Contributions
-noeone
+g
 
 ## Tests
-none
+g
 
 ## Questions
 If you have any questions, please contact me through my email:
-no
+g
 or go to my github:
-https://github.com/resonantdevotion
+https://github.com/g

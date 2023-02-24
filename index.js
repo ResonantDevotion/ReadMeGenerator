@@ -7,14 +7,15 @@ const mitLicence = '[![License: MIT](https://img.shields.io/badge/License-MIT-ye
 const apacheLicence = '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)';
 const doWhatLicence = '[![License: WTFPL](https://img.shields.io/badge/License-WTFPL-brightgreen.svg)](http://www.wtfpl.net/about/)'
 
-const licenceBadge = function (response) {
-    if (response.licence === response.licence.choices[0]) {
+const licenceBadge = (response) => {
+    const choice = ['Apache license 2.0', 'MIT licence', 'Do What The F*ck You Want To Public License'];
+    if (response.licence === choice[0]) {
         return apacheLicence;
     }
-else if (response.licence === response.licence.choices[1]) {
+else if (response.licence === choice[1]) {
     return mitLicence;
 }
-else if (response.licence === response.licence.choices[2]) {
+else {
     return doWhatLicence;
 };
 };
@@ -28,7 +29,7 @@ const generateReadme = (response) =>
     `# Title
 ${response.title}
 ` + 
-licenceBadge
+licenceBadge(response)
 +
 `
 ## Description
@@ -139,8 +140,3 @@ inquirer
             (err) => err ? console.error(err) : console.log('Success')
         )
     })
-
-
-// When a user chooses a license for their application from a list of options then a badge for that license is added 
-// near the top of the README 
-
