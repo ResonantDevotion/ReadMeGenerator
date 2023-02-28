@@ -73,7 +73,7 @@ ${response.test}
 ## Credits
 I would like to give credits to:
 ${response.credits}
-For the https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba
+Licence badge was sourced from: https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba
 
 ## Questions
 If you have any additional questions, please contact me through my email:
@@ -132,7 +132,7 @@ inquirer
         {
             // Credits
             type: 'input',
-            message: 'Add your collaborators or resources used to craete your app:',
+            message: 'Add your collaborators or resources used to create your app:',
             name: 'credits'
         },
         {
