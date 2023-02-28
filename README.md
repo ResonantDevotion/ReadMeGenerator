@@ -25,6 +25,8 @@ Install VS code
 To use the app follow these instructions:
 To use just type in 'node index' into your integrated terminal and follow the question prompts. It may help to have some ideas in mind before you start!
 
+<img width="932" alt="Screenshot 2023-02-28 at 4 11 05 PM" src="https://user-images.githubusercontent.com/119468426/221746955-1fd06d03-74df-4063-abc1-86afcbe25908.png">
+
 ## Licence
 This application is covered by the MIT licence. 
 As shown in the badge displayed in the title. 
